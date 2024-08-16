@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NotasApp.Views.PaginaPrincipal"
+             Title="Inicio">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Limpiar" Clicked="OnBtnLimpiarClicked"/>
+    </ContentPage.ToolbarItems>
+
+
+    <ScrollView>
+        <StackLayout Spacing="15" Padding="15">
+
+            <Frame Padding="0" WidthRequest="170" HeightRequest="250">
+                <StackLayout>
+                    <Image x:Name="imgFoto"
+                    Aspect="AspectFill"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="StartAndExpand"
+                    HeightRequest="180"
+                    BackgroundColor="LightGray"/>
+
+                    <Button ImageSource="photo_ico.png"
+                    Clicked="OnBtnFotoClicked"
+                        WidthRequest="180"
+                        HeightRequest="60"
+                        BackgroundColor="#FF6F61"
+                    CornerRadius="20"/>
+                </StackLayout>
+            </Frame>
+
+
+            <Frame Padding="0">
+                <StackLayout>
+                    <Button x:Name="btnBtnStartRecording"
+                     ImageSource="microphone_ico.png"
+                    Clicked="OnBtnStartRecordingClicked"
+                    CornerRadius="0"
+                    BackgroundColor="#FF6F61"
+                    VerticalOptions="End"/>
+                </StackLayout>
+            </Frame>
+
+
+            <Frame CornerRadius="10" Padding="5" HeightRequest="140">
+                <StackLayout>
+                    <Label Text="Descripcion:" />
+                    <Editor x:Name="txtDescripcion" Keyboard="Chat" HeightRequest="120"/>
+                </StackLayout>
+            </Frame>
+
+
+            <StackLayout Orientation="Horizontal" VerticalOptions="EndAndExpand" Spacing="5"  Padding="0,0,0,60" >
+                <Button Text="Guardar"
+                FontAttributes="Bold"
+                Clicked="OnBtnGuardarClicked"
+                BackgroundColor="#FF6F61"
+                HorizontalOptions="FillAndExpand"/>
+
+                <Button Text="Ver Lista"
+                Clicked="OnBtnListaClicked"
+                FontAttributes="Bold"
+                BackgroundColor="#FF6F61"
+                HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+
+
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

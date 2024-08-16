@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:NotasApp.Views"
+             x:Class="NotasApp.Views.Detalle"
+             Title="Detalle">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonStyle" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#FF6F61"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="CornerRadius" Value="10"/>
+                <Setter Property="Padding" Value="15,10"/>
+                <Setter Property="FontSize" Value="16"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+
+            <Style x:Key="LabelStyle" TargetType="Label">
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="FontSize" Value="18"/>
+                <Setter Property="Padding" Value="10"/>
+                <Setter Property="Margin" Value="0,0,0,10"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Spacing="20" Padding="20,30">
+        <Frame CornerRadius="10"
+               HasShadow="True"
+               Padding="10"
+               BackgroundColor="White">
+            <Label x:Name="lblDescripcion"
+                   Text="{Binding Descripcion}"
+                   Style="{StaticResource LabelStyle}"
+                   LineBreakMode="WordWrap"/>
+        </Frame>
+
+        <Button Text="Ver Imagen"
+                Style="{StaticResource ButtonStyle}"
+                Clicked="OnBtnPictureClicked"/>
+
+        <Button Text="Reproducir Audio"
+                Style="{StaticResource ButtonStyle}"
+                Clicked="OnBtnPlayClicked"/> 
+
+            <Button Text="Actualizar"
+                Style="{StaticResource ButtonStyle}"
+                Clicked="OnBtnEditClicked"/>
+
+        <Button Text="Eliminar"
+                Style="{StaticResource ButtonStyle}"
+                Clicked="OnBtnDeleteClicked"/>
+    </StackLayout>
+</ContentPage>
